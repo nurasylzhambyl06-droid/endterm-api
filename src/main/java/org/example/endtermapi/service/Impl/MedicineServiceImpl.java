@@ -1,18 +1,20 @@
-package org.example.endtermapi.service;
+package org.example.endtermapi.service.Impl;
 
-import model.BaseMedicine;
+import org.example.endtermapi.model.BaseMedicine;
+import org.example.endtermapi.repository.InMemoryMedicineRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.interfaces.CrudRepository;
+import org.example.endtermapi.repository.interfaces.CrudRepository;
 import org.example.endtermapi.service.interfaces.MedicineService;
 
 import java.util.List;
 
 @Service
 public class MedicineServiceImpl implements MedicineService {
+    private final CrudRepository<BaseMedicine> repository;
 
-    private CrudRepository<BaseMedicine> repository;
-
-    public MedicineServiceImpl(CrudRepository<BaseMedicine> repository) {
+    @Autowired
+    public MedicineServiceImpl(InMemoryMedicineRepository repository) {
         this.repository = repository;
     }
 

@@ -1,15 +1,14 @@
-package repository;
+package org.example.endtermapi.repository;
 
-import model.BaseMedicine;
+import org.example.endtermapi.model.BaseMedicine;
 import org.springframework.stereotype.Repository;
-import repository.interfaces.CrudRepository;
+import org.example.endtermapi.repository.interfaces.CrudRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class InMemoryMedicineRepository implements CrudRepository<BaseMedicine> {
-
     private final List<BaseMedicine> storage = new ArrayList<>();
 
     @Override
@@ -19,10 +18,7 @@ public class InMemoryMedicineRepository implements CrudRepository<BaseMedicine> 
 
     @Override
     public BaseMedicine findById(int id) {
-        return storage.stream()
-                .filter(m -> m.getId() == id)
-                .findFirst()
-                .orElse(null);
+        return storage.stream().filter(m -> m.getId() == id).findFirst().orElse(null);
     }
 
     @Override

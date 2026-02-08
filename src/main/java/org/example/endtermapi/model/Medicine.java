@@ -1,7 +1,7 @@
-package model;
+package org.example.endtermapi.model;
 
-import model.interfaces.PricedItem;
-import model.interfaces.Validatable;
+import org.example.endtermapi.model.interfaces.PricedItem;
+import org.example.endtermapi.model.interfaces.Validatable;
 
 public class Medicine extends BaseEntity
         implements Validatable, PricedItem {
