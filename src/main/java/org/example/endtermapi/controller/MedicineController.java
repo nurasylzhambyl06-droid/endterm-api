@@ -1,7 +1,10 @@
-package controller;
+package org.example.endtermapi.controller;
 
-import model.BaseMedicine;
-import service.interfaces.MedicineService;
+import org.example.endtermapi.dto.MedicineDTO;
+import org.example.endtermapi.model.BaseMedicine;
+import org.example.endtermapi.model.OTCMedicine;
+import org.example.endtermapi.model.PrescriptionMedicine;
+import org.example.endtermapi.service.interfaces.MedicineService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,17 +20,19 @@ public class MedicineController {
     }
 
     @PostMapping
-    public void createMedicine(@RequestBody BaseMedicine medicine) {
+    public BaseMedicine createMedicine(@RequestBody MedicineDTO dto) {
+        BaseMedicine medicine;
+        if("OTC".equalsIgnoreCase(dto.getType())) {
+            medicine = new OTCMedicine(dto.getId(), dto.getName());
+        } else {
+            medicine = new PrescriptionMedicine(dto.getId(), dto.getName(), true);
+        }
         service.addMedicine(medicine);
+        return medicine;
     }
 
     @GetMapping
     public List<BaseMedicine> getAll() {
         return service.getAll();
-    }
-
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable int id) {
-        service.delete(id);
     }
 }
