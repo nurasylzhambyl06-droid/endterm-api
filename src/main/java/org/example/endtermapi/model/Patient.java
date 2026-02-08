@@ -1,4 +1,4 @@
-package model;
+package org.example.endtermapi.model;
 
 public class Patient extends BaseEntity {
 

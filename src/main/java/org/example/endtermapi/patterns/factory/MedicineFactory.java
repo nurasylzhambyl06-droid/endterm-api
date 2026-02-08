@@ -1,8 +1,8 @@
-package patterns.factory;
+package org.example.endtermapi.patterns.factory;
 
-import model.BaseMedicine;
-import model.OTCMedicine;
-import model.PrescriptionMedicine;
+import org.example.endtermapi.model.BaseMedicine;
+import org.example.endtermapi.model.OTCMedicine;
+import org.example.endtermapi.model.PrescriptionMedicine;
 
 public class MedicineFactory {
 

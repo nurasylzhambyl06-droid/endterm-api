@@ -1,4 +1,4 @@
-package model;
+package org.example.endtermapi.model;
 
 public class PrescriptionMedicine extends BaseMedicine {
     private boolean requiresDoctorApproval;

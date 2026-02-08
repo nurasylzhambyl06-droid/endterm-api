@@ -1,6 +1,6 @@
-package patterns.builder;
+package org.example.endtermapi.patterns.builder;
 
-import model.Medicine;
+import org.example.endtermapi.model.Medicine;
 
 public class MedicineBuilder {
 

@@ -1,6 +1,6 @@
-package service.interfaces;
+package org.example.endtermapi.service.interfaces;
 
-import model.BaseMedicine;
+import org.example.endtermapi.model.BaseMedicine;
 
 import java.util.List;
 

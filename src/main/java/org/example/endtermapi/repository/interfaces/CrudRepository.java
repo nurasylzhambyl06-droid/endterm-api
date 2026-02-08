@@ -1,4 +1,4 @@
-package repository.interfaces;
+package org.example.endtermapi.repository.interfaces;
 
 import java.util.List;
 

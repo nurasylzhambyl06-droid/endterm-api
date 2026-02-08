@@ -1,4 +1,4 @@
-package patterns.singleton;
+package org.example.endtermapi.patterns.singleton;
 
 public class DatabaseConfig {
 

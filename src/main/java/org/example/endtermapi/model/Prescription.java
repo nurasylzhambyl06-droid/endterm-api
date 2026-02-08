@@ -1,4 +1,4 @@
-package model;
+package org.example.endtermapi.model;
 
 import java.util.List;
 
