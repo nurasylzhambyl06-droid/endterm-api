@@ -1,4 +1,4 @@
-package model;
+package org.example.endtermapi.model;
 
 public abstract class BaseMedicine {
     private int id;

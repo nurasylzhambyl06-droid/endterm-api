@@ -1,4 +1,4 @@
-package model;
+package org.example.endtermapi.model;
 
 public abstract class BaseEntity {
     protected int id;
