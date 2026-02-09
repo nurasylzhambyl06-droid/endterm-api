@@ -88,6 +88,24 @@ Response (JSON):
 
 ![img_3.png](img_3.png)
 
+4.3 Put Medicine
+
+[
+{
+"id": 1,
+"name": "Ibuprofen Updated",
+"type": "OTC"
+}
+]
+
+![img_4.png](img_4.png)
+
+4.4 Delete Medicine
+
+
+![img_5.png](img_5.png)
+
+
 5. Design Patterns
 
 Singleton Pattern
@@ -117,10 +135,8 @@ The factory returns the base type BaseMedicine, enabling easy extension.
 
 Builder Pattern
 
-(Explain here if implemented, otherwise:)
 
-The Builder pattern can be applied for creating complex domain objects such as prescriptions with optional parameters.
-
+The Builder Pattern is used to construct Medicine objects with optional parameters.
 
 -
 
@@ -184,6 +200,17 @@ Errors are returned as meaningful HTTP responses:
 The application uses PostgreSQL.
 
 Connection is configured in application.properties.
+
+JDBC repositories are implemented based on previous assignments.
+
+For REST API demonstration and simplicity, I used an in-memory repository, but the database layer is fully implemented and can be integrated.
+
+The project integrates PostgreSQL using JDBC.
+A separate REST endpoint is provided to demonstrate real database access.
+
+GET /api/medicines/db – retrieves medicine data directly from PostgreSQL.
+
+![img_6.png](img_6.png)
 
 
 -

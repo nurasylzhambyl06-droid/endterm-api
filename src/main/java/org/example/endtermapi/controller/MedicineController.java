@@ -35,4 +35,15 @@ public class MedicineController {
     public List<BaseMedicine> getAll() {
         return service.getAll();
     }
+
+    @PutMapping("/{id}")
+    public void updateMedicine(
+            @PathVariable int id,
+            @RequestBody MedicineDTO dto
+    ) {
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteMedicine(@PathVariable int id) {
+    }
 }
