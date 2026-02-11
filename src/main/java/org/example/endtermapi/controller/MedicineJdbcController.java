@@ -15,7 +15,29 @@ public class MedicineJdbcController {
             new JdbcMedicineRepository();
 
     @GetMapping
-    public List<Medicine> getAllFromDatabase() throws SQLException {
+    public List<Medicine> getAll() throws SQLException {
         return repository.findAll();
+    }
+
+    @PostMapping
+    public String create(@RequestBody Medicine medicine) throws SQLException {
+        repository.save(medicine);
+        return "Medicine saved to database";
+    }
+
+    @PutMapping("/{id}")
+    public String update(
+            @PathVariable int id,
+            @RequestBody Medicine medicine
+    ) throws SQLException {
+
+        repository.update(id, medicine);
+        return "Medicine updated";
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable int id) throws SQLException {
+        repository.delete(id);
+        return "Medicine deleted";
     }
 }

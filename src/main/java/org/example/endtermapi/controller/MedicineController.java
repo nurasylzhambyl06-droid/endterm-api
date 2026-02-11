@@ -45,5 +45,6 @@ public class MedicineController {
 
     @DeleteMapping("/{id}")
     public void deleteMedicine(@PathVariable int id) {
+        service.delete(id);
     }
 }
