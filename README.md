@@ -1,3 +1,64 @@
+#Bonus Task — In-Memory Caching Layer
+
+Objective
+
+The objective of this bonus task is to improve application performance by implementing a simple in-memory caching mechanism for frequently requested data.
+The caching layer reduces unnecessary database access by storing previously retrieved results in memory.
+Implementation Overview
+
+Caching was implemented for the endpoint:
+GET /api/medicines/db
+
+The first request retrieves data from PostgreSQL using JDBC and stores the result in memory.
+Subsequent requests return the cached data instead of querying the database again.
+This significantly reduces database load and improves response time.
+
+
+How It Works
+
+First request:
+Data is fetched from the database.
+The result is stored in memory.
+Console output confirms database access.
+
+![img_7.png](img_7.png)
+
+Repeated requests:
+Data is returned from the in-memory cache.
+
+![img_8.png](img_8.png)
+
+No SQL query is executed.
+
+After any modification operation (POST, PUT, DELETE):
+The cache is automatically cleared.    
+
+The next GET request retrieves fresh data from the database.
+
+Singleton Pattern
+
+The cache is implemented using the Singleton design pattern.
+This ensures that only one cache instance exists throughout the application lifecycle.
+Using a single shared instance guarantees consistent cached data across all requests.
+
+Design Compliance
+
+The implementation satisfies all required constraints:
+In-memory storage using standard Java collections
+Only one cache instance (Singleton)
+Automatic cache invalidation after data modification
+Layered architecture preserved
+SOLID principles respected
+The caching mechanism does not bypass the service or repository layers and does not violate architectural separation of concerns.
+
+Performance Benefit
+
+The caching layer improves system performance by:
+Reducing repeated database queries
+Decreasing database load
+Improving response time for frequently accessed endpoints
+
+
 Endterm Project – Spring Boot REST API
 
 1. Project Overview
